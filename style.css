@@ -1,0 +1,29 @@
+/* Fichier: style.css */
+
+/* Image de fond Hero */
+.hero-bg {
+    background-image: linear-gradient(to bottom right, rgba(15, 23, 42, 0.95), rgba(30, 64, 175, 0.85)), url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Pattern Premium */
+.premium-pattern {
+    background-color: #0f172a;
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231e40af' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+}
+
+/* Animations */
+.fade-enter { animation: fadeIn 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(15px); } to { opacity: 1; transform: translateY(0); } }
+
+/* Toast Notification */
+#toast { visibility: hidden; min-width: 320px; background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); color: #0f172a; border-left: 4px solid #1e40af; border-radius: 8px; padding: 16px 20px; position: fixed; z-index: 100; left: 50%; bottom: 30px; transform: translateX(-50%); box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); font-weight: 500; }
+#toast.show { visibility: visible; animation: slideUpFade 0.4s ease-out forwards, fadeOutDown 0.4s ease-in 3s forwards; }
+@keyframes slideUpFade { from {bottom: 0; opacity: 0;} to {bottom: 30px; opacity: 1;} }
+@keyframes fadeOutDown { from {bottom: 30px; opacity: 1;} to {bottom: -20px; opacity: 0;} }
+
+/* Utilitaires */
+.input-pro:focus { outline: 2px solid #3b82f6; outline-offset: 2px; border-color: transparent; }
+.scrollbar-hide::-webkit-scrollbar { display: none; }
+.scrollbar-hide { -ms-overflow-style: none; scrollbar-width: none; }
